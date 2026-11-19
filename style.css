@@ -1,0 +1,294 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* COULEURS */
+  --color-background: #FBF6F2;
+  --color-primary: #EAD5CF;
+  --color-secondary: #D6ADA3;
+  --color-accent: #AD7770;
+  --color-dark: #493633;
+  --color-text: #66504B;
+  --color-white: #FFFFFF;
+  --color-gold: #B69A72;
+
+  /* POLICES */
+  --font-heading: "Bodoni Moda", serif;
+  --font-body: "Poppins", sans-serif;
+  --font-accent: "Cormorant Garamond", serif;
+}
+
+/* BASE */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-background);
+  background-image: url("./P_tales de roses rouges en suspension.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--color-dark);
+}
+
+p {
+  font-family: var(--font-body);
+  color: var(--color-text);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo strong {
+  font-family: var(--font-heading);
+  font-size: 35px;
+  color: var(--color-dark);
+  letter-spacing: 2px;
+}
+
+.logo-text > span {
+  margin-top: 2px;
+  font-family: var(--font-accent);
+  font-size: 15px;
+  color: var(--color-accent);
+}
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 5%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: var(--color-background);
+}
+
+/* NAVIGATION */
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-dark);
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--color-accent);
+}
+
+/* BOUTON CONTACT */
+.contact {
+  background-color: var(--color-primary);
+  padding: 10px 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-5px);
+}
+
+.contact:active {
+  transform: scale(0.96);
+}
+
+/* SECTION HERO */
+.hero {
+  width: 100%;
+  min-height: 650px;
+  padding: 125px 5% 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 30px;
+}
+
+.hero > img {
+  width: min(100%, 440px);
+  height: 440px;
+  object-fit: cover;
+  justify-self: center;
+}
+
+.presentation {
+  text-align: center;
+  max-width: 560px;
+  justify-self: center;
+}
+
+.presentation h1 {
+  font-size: clamp(38px, 5vw, 60px);
+  line-height: 1.15;
+}
+
+.presentation p {
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.hero-button {
+  background-color: rgba(255, 0, 0, 0.1);
+  padding: 12px 20px;
+  font-family: var(--font-accent);
+  font-size: 20px;
+  border-radius: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.border-animation {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.border-animation rect {
+  fill: none;
+  stroke: rgba(255, 0, 0, 0.5);
+  stroke-width: 2;
+  stroke-dasharray: 8 5;
+  animation: defilement 2s linear infinite;
+}
+
+@keyframes defilement {
+  to {
+    stroke-dashoffset: -52;
+  }
+}
+
+/* PRODUITS */
+.produits {
+  padding: 70px 5%;
+  text-align: center;
+}
+
+.produits h2 {
+  font-size: clamp(32px, 4vw, 42px);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+}
+
+.articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.produit {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.65);
+}
+
+.image-produit {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.produit h3 {
+  font-size: 22px;
+}
+
+.prix {
+  display: block;
+  margin: 10px 0 18px;
+}
+
+.acheter {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: var(--color-primary);
+  transition: background-color 0.3s ease;
+}
+
+.acheter:hover {
+  background-color: var(--color-secondary);
+}
+
+/* AUTRES SECTIONS */
+.section-simple {
+  padding: 60px 5%;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+  header {
+    position: relative;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  nav ul {
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 50px;
+    grid-template-columns: 1fr;
+  }
+
+  .hero > img {
+    height: auto;
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 520px) {
+  header {
+    justify-content: center;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  .contact {
+    margin-bottom: 10px;
+  }
+}
